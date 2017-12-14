@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_dismissibleHintRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_small"
+    android:layout_marginTop="@dimen/margin_small">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_regular">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textView_hintTitle"
+            style="@style/TextPrimary.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/layout_hintBody"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Dismissible hint title"/>
+
+        <FrameLayout
+            android:id="@+id/layout_hintBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/layout_divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_hintTitle"/>
+
+        <include
+            android:id="@+id/layout_divider"
+            style="@style/EdgeToEdgeDivider"
+            layout="@layout/layout_divider_default"
+            app:layout_constraintBottom_toTopOf="@+id/button_hintDismiss"
+            app:layout_constraintTop_toBottomOf="@id/layout_hintBody"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/button_hintDismiss"
+            style="@style/DismissibleHintDismissButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_divider"/>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
